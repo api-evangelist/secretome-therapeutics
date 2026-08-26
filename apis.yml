@@ -1,7 +1,13 @@
 aid: secretome-therapeutics
 name: Secretome Therapeutics
-description: 'Secretome Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Secretome Therapeutics is a clinical-stage biotechnology company (formerly NeoProgen, founded 2018)
+  developing allogeneic, off-the-shelf regenerative therapies derived from neonatal cardiac progenitor
+  cells (nCPCs). Its lead candidate STM-01, and the cell-free secretome STM-2, target heart failure with
+  preserved ejection fraction (HFpEF), dilated cardiomyopathy (DCM) and Duchenne muscular dystrophy
+  associated cardiomyopathy, and are in Phase 1 clinical study. The company publishes a corporate and
+  investor-relations website covering its science, pipeline, team, patient/expanded-access policy and
+  press releases; it publishes no developer program, API, SDK or machine-readable contract of any kind.
 url: https://raw.githubusercontent.com/api-evangelist/secretome-therapeutics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,12 +18,65 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Therapeutics
+- Regenerative Medicine
+- Cell Therapy
+- Cardiology
+- Clinical Stage
+- Life Sciences
+- Healthcare
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+image: https://storage.googleapis.com/vendorgroup-assets/site/c26b1537-b667-48ad-bd88-c03a4a03b51d/2026/03/20/69bc8e242fbd420ce21e43d1/secretome-social.jpg
 common:
+- type: DomainSecurity
+  url: security/secretome-therapeutics-domain-security.yml
 - type: Website
+  url: https://secretometherapeutics.com/
+- type: TermsOfService
+  url: https://secretometherapeutics.com/terms
+- type: PrivacyPolicy
+  url: https://secretometherapeutics.com/privacy-policy
+- type: News
+  url: https://secretometherapeutics.com/news-publications
+- type: PressReleases
+  url: https://secretometherapeutics.com/press-releases
+- type: Team
+  url: https://secretometherapeutics.com/team
+- type: Contact
+  url: https://secretometherapeutics.com/contact
+- type: SecondaryMarketListing
   url: https://forgeglobal.com/secretome-therapeutics_stock/
+- type: LLMsTxt
+  url: llms/secretome-therapeutics-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Secretome Therapeutics is a clinical-stage cell-therapy developer whose only web property is a
+    VendorGroup/Kscope investor-relations site with seven marketing pages and no developer section;
+    that platform answers HTTP 200 with the homepage HTML for every unknown path, so /openapi.json,
+    /graphql, /llms.txt and all seven /.well-known/ probes returned soft-404 HTML shells rather than
+    documents, and no GitHub organisation, npm or PyPI package exists under the company name.
+  evidence:
+  - url: https://secretometherapeutics.com/openapi.json
+    status: 200
+  - url: https://secretometherapeutics.com/.well-known/agent-card.json
+    status: 200
+  - url: https://secretometherapeutics.com/.well-known/security.txt
+    status: 200
+  - url: https://api.github.com/orgs/secretome-therapeutics
+    status: 404
+  - url: https://secretometherapeutics.com/our-science
+    status: 200
+  checked: '2026-08-26'
